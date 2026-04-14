@@ -8,194 +8,97 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fafaf8;
-      --surface: #f3f2ee;
+      --bg: #ffffff;
+      --surface: #f7f7f5;
       --text: #1a1a18;
       --muted: #6b6b67;
       --faint: #9a9a95;
-      --border: #e2e1db;
+      --border: #e8e8e4;
       --accent: #2d4a3e;
-      --accent-light: #e8f0ed;
+      --accent-light: #eaf0ed;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.6;
-    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6; }
 
-    /* NAV */
     nav {
       position: sticky; top: 0; z-index: 10;
-      background: rgba(250,250,248,0.92);
+      background: rgba(255,255,255,0.94);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
       padding: 0 2rem;
       display: flex; align-items: center; justify-content: space-between;
       height: 54px;
     }
-    .nav-name { font-size: 14px; font-weight: 500; letter-spacing: .01em; }
-    .nav-links { display: flex; gap: 1.75rem; }
-    .nav-links a {
-      font-size: 13px; color: var(--muted); text-decoration: none;
-      transition: color .15s;
-    }
+    .nav-name { font-size: 14px; font-weight: 500; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .15s; }
     .nav-links a:hover { color: var(--text); }
 
-    /* LAYOUT */
     .container { max-width: 820px; margin: 0 auto; padding: 0 2rem; }
 
-    /* HERO */
-    .hero {
-      padding: 5rem 0 4rem;
-      display: grid;
-      grid-template-columns: 1fr 110px;
-      gap: 2.5rem;
-      align-items: start;
-    }
-    .hero-eyebrow {
-      font-size: 12px; font-weight: 400; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--faint);
-      margin-bottom: .75rem;
-    }
-    h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 42px; font-weight: 400; line-height: 1.15;
-      margin-bottom: .6rem;
-    }
+    .hero { padding: 5rem 0 4rem; display: grid; grid-template-columns: 1fr 110px; gap: 2.5rem; align-items: start; }
+    .hero-eyebrow { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin-bottom: .75rem; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: 42px; font-weight: 400; line-height: 1.15; margin-bottom: .5rem; }
     h1 em { font-style: italic; color: var(--muted); }
-    .hero-sub {
-      font-size: 14px; color: var(--muted); line-height: 1.7;
-      margin-bottom: 1.25rem; max-width: 560px;
-    }
+    .hero-role { font-size: 14px; color: var(--muted); margin-bottom: 1rem; }
+    .hero-bio { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 1.25rem; max-width: 560px; }
     .hero-links { display: flex; gap: .6rem; flex-wrap: wrap; }
-    .pill {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-size: 12px; padding: 5px 12px;
-      border: 1px solid var(--border);
-      border-radius: 20px; color: var(--muted);
-      text-decoration: none; transition: all .15s;
-    }
+    .pill { display: inline-flex; align-items: center; font-size: 12px; padding: 5px 12px; border: 1px solid var(--border); border-radius: 20px; color: var(--muted); text-decoration: none; transition: all .15s; }
     .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
-    .avatar {
-      width: 100px; height: 100px; border-radius: 50%;
-      background: var(--accent-light);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'DM Serif Display', serif;
-      font-size: 28px; color: var(--accent); font-weight: 400;
-      border: 1px solid var(--border);
-    }
+    .avatar { width: 100px; height: 100px; border-radius: 50%; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--accent); border: 1px solid var(--border); }
 
-    /* SECTIONS */
-    section { padding: 3.5rem 0; border-top: 1px solid var(--border); }
-    .section-header {
-      display: flex; align-items: baseline; gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 22px; font-weight: 400;
-    }
+    section { padding: 3rem 0; border-top: 1px solid var(--border); }
+    .section-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.75rem; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; }
     .section-note { font-size: 12px; color: var(--faint); }
+    .subsection-label { font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin: 1.75rem 0 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--border); }
+    .subsection-label:first-of-type { margin-top: 0; }
 
-    /* RESEARCH INTERESTS */
     .tag-cloud { display: flex; flex-wrap: wrap; gap: .5rem; }
-    .tag {
-      font-size: 13px; padding: 6px 13px;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 4px; color: var(--muted);
-    }
+    .tag { font-size: 13px; padding: 6px 13px; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; color: var(--muted); }
 
-    /* PUBLICATIONS */
-    .pub-list { display: flex; flex-direction: column; gap: 1.5rem; }
-    .pub {
-      display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 1rem;
-      align-items: start;
-    }
-    .pub-year {
-      font-size: 12px; color: var(--faint);
-      padding-top: 2px; text-align: right;
-    }
-    .pub-body {}
-    .pub-title {
-      font-size: 14px; font-weight: 500; color: var(--text);
-      margin-bottom: .3rem; line-height: 1.5;
-    }
-    .pub-venue { font-size: 12px; color: var(--muted); }
-    .pub-badge {
-      display: inline-block; font-size: 10px; font-weight: 500;
-      padding: 2px 7px; border-radius: 3px;
-      margin-right: 6px; letter-spacing: .04em; text-transform: uppercase;
-    }
+    .pub-list { display: flex; flex-direction: column; gap: 1.25rem; }
+    .pub { display: grid; grid-template-columns: 52px 1fr; gap: 1rem; align-items: start; }
+    .pub-year { font-size: 12px; color: var(--faint); padding-top: 2px; text-align: right; }
+    .pub-title { font-size: 13.5px; font-weight: 500; color: var(--text); margin-bottom: .3rem; line-height: 1.5; }
+    .pub-venue { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .pub-badge { display: inline-block; font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 3px; margin-right: 6px; letter-spacing: .04em; text-transform: uppercase; vertical-align: middle; }
     .badge-pub { background: #e8f4ec; color: #2a6e3f; }
-    .badge-prep { background: #fef3e2; color: #9a6000; }
+    .badge-rev { background: #fef3e2; color: #9a6000; }
+    .badge-wip { background: #eef3ff; color: #3a5aad; }
+    .badge-diss { background: #f3eeff; color: #6a3aad; }
 
-    /* PROJECTS */
-    .proj-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: .75rem;
-    }
-    .proj-card {
-      padding: 1.1rem 1.2rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--bg);
-      transition: border-color .15s, background .15s;
-    }
-    .proj-card:hover { border-color: #c0c0b8; background: var(--surface); }
-    .proj-card-title {
-      font-size: 13.5px; font-weight: 500; color: var(--text);
-      margin-bottom: .4rem; line-height: 1.4;
-    }
-    .proj-card-desc {
-      font-size: 12.5px; color: var(--muted); line-height: 1.65;
-      margin-bottom: .65rem;
-    }
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: .75rem; }
+    .proj-card { padding: 1.1rem 1.2rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); transition: border-color .15s, background .15s; }
+    .proj-card:hover { border-color: #c8c8c0; background: var(--surface); }
+    .proj-card-title { font-size: 13.5px; font-weight: 500; color: var(--text); margin-bottom: .4rem; line-height: 1.4; }
+    .proj-card-desc { font-size: 12.5px; color: var(--muted); line-height: 1.65; margin-bottom: .65rem; }
     .proj-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
-    .proj-tag {
-      font-size: 11px; padding: 2px 7px;
-      background: var(--surface); border-radius: 3px;
-      color: var(--faint);
-    }
+    .proj-tag { font-size: 11px; padding: 2px 7px; background: var(--surface); border-radius: 3px; color: var(--faint); }
 
-    /* CV */
     .cv-table { width: 100%; border-collapse: collapse; }
     .cv-table tr { border-bottom: 1px solid var(--border); }
     .cv-table tr:last-child { border-bottom: none; }
     .cv-table td { padding: .85rem 0; vertical-align: top; }
-    .cv-col-year { width: 100px; font-size: 12px; color: var(--faint); padding-right: 1.5rem; }
-    .cv-col-title { font-size: 13.5px; font-weight: 500; color: var(--text); margin-bottom: .2rem; }
-    .cv-col-sub { font-size: 12px; color: var(--muted); }
+    .cv-col-year { width: 110px; font-size: 12px; color: var(--faint); padding-right: 1.5rem; padding-top: 2px; line-height: 1.5; }
+    .cv-col-title { font-size: 13.5px; font-weight: 500; color: var(--text); margin-bottom: .2rem; line-height: 1.4; }
+    .cv-col-sub { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
-    /* CONTACT */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: .6rem;
-    }
-    .contact-card {
-      padding: .9rem 1.1rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-    }
-    .contact-label {
-      font-size: 10px; font-weight: 500; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--faint);
-      margin-bottom: .3rem;
-    }
-    .contact-value { font-size: 13px; color: var(--text); }
+    .award-list { display: flex; flex-direction: column; gap: 1rem; }
+    .award-item { display: grid; grid-template-columns: 52px 1fr; gap: 1rem; }
+    .award-year { font-size: 12px; color: var(--faint); text-align: right; padding-top: 2px; }
+    .award-title { font-size: 13.5px; font-weight: 500; color: var(--text); margin-bottom: .2rem; }
+    .award-sub { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
-    /* FOOTER */
-    footer {
-      padding: 2.5rem 0; border-top: 1px solid var(--border);
-      font-size: 12px; color: var(--faint); text-align: center;
-    }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: .6rem; }
+    .contact-card { padding: .9rem 1.1rem; border: 1px solid var(--border); border-radius: 6px; }
+    .contact-label { font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin-bottom: .3rem; }
+    .contact-value { font-size: 13px; color: var(--text); line-height: 1.6; }
+    .contact-value a { color: var(--accent); text-decoration: none; }
+    .contact-value a:hover { text-decoration: underline; }
+
+    footer { padding: 2.5rem 0; border-top: 1px solid var(--border); font-size: 12px; color: var(--faint); text-align: center; }
 
     @media (max-width: 600px) {
       h1 { font-size: 30px; }
@@ -204,13 +107,14 @@
       nav { padding: 0 1rem; }
       .container { padding: 0 1rem; }
       .nav-links { gap: 1rem; }
+      .pub { grid-template-columns: 44px 1fr; }
     }
   </style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-name">Sujin Gan</span>
+  <span class="nav-name">Sujin Gan, RN</span>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#research">Research</a>
@@ -223,29 +127,26 @@
 
 <div class="container">
 
-  <!-- HERO / ABOUT -->
   <div class="hero" id="about">
     <div>
-      <div class="hero-eyebrow">Medical Informatics · Ajou University Hospital</div>
+      <div class="hero-eyebrow">Biomedical Informatics · Ajou University</div>
       <h1>Sujin Gan <em>/ 간수진</em></h1>
-      <p class="hero-sub">
-        PhD candidate working at the intersection of clinical NLP, pharmacoepidemiology, and nursing informatics. My research focuses on building and validating AI systems that are clinically meaningful — not just technically impressive. Currently developing a modular LLM agent pipeline for extracting deterioration signals from Korean nursing narratives.
+      <div class="hero-role">PhD Candidate, RN · Advisor: Prof. Rae Woong Park, MD, PhD</div>
+      <p class="hero-bio">
+        I build and validate AI systems for clinical decision support — focusing on extracting clinically meaningful signals from unstructured health records. My work spans clinical NLP, pharmacoepidemiology, and nursing informatics, grounded in OMOP-CDM and real-world evidence methods. My dissertation develops a modular LLM agent pipeline for early detection of clinical deterioration from Korean inpatient nursing narratives.
       </p>
       <div class="hero-links">
         <a class="pill" href="#">Google Scholar</a>
         <a class="pill" href="#">GitHub</a>
         <a class="pill" href="#">ORCID</a>
-        <a class="pill" href="mailto:">Email</a>
+        <a class="pill" href="mailto:gansujin@gmail.com">Email</a>
       </div>
     </div>
     <div class="avatar">SG</div>
   </div>
 
-  <!-- RESEARCH INTERESTS -->
   <section id="research">
-    <div class="section-header">
-      <h2>Research interests</h2>
-    </div>
+    <div class="section-header"><h2>Research interests</h2></div>
     <div class="tag-cloud">
       <span class="tag">Clinical NLP</span>
       <span class="tag">LLM agent systems</span>
@@ -254,168 +155,309 @@
       <span class="tag">OMOP-CDM / OHDSI</span>
       <span class="tag">Early warning systems</span>
       <span class="tag">Clinical AI validation</span>
-      <span class="tag">Korean EHR</span>
       <span class="tag">Social determinants of health</span>
+      <span class="tag">Multimodal EHR integration</span>
       <span class="tag">Real-world evidence</span>
     </div>
   </section>
 
-  <!-- PUBLICATIONS -->
   <section id="publications">
-    <div class="section-header">
-      <h2>Publications</h2>
-      <span class="section-note">* corresponding author</span>
-    </div>
-    <div class="pub-list">
+    <div class="section-header"><h2>Publications</h2><span class="section-note">* first author</span></div>
 
+    <div class="subsection-label">Journal articles</div>
+    <div class="pub-list">
+      <div class="pub">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title"><span class="pub-badge badge-pub">Published</span>Rosuvastatin versus atorvastatin for cardiovascular disease risk in patients with type 2 diabetes: A Korean cohort study</div>
+          <div class="pub-venue">Kim C, Chang J, <strong>Gan S</strong>, et al. · <em>Pharmaceuticals</em>, 2025; 18(12):1860</div>
+        </div>
+      </div>
       <div class="pub">
         <div class="pub-year">2024</div>
-        <div class="pub-body">
-          <div class="pub-title">
-            <span class="pub-badge badge-pub">Published</span>
-            Predicting hospital readmission using home care nursing records
-          </div>
-          <div class="pub-venue">Gan S, et al. · Journal Name · 2024</div>
+        <div>
+          <div class="pub-title"><span class="pub-badge badge-pub">Published</span>* Enhancing readmission prediction models by integrating insights from home healthcare notes: Retrospective cohort study</div>
+          <div class="pub-venue"><strong>Gan S</strong>, Kim C, et al. · <em>International Journal of Nursing Studies</em>, 2024; 158:104850</div>
         </div>
       </div>
-
       <div class="pub">
-        <div class="pub-year">2025</div>
-        <div class="pub-body">
-          <div class="pub-title">
-            <span class="pub-badge badge-prep">In preparation</span>
-            Aripiprazole vs. mirtazapine augmentation in SSRI-treated depression: a pharmacoepidemiological cohort study using HIRA/OMOP-CDM
-          </div>
-          <div class="pub-venue">Gan S, et al. · PS-matched cohort · HIRA data</div>
+        <div class="pub-year">2024</div>
+        <div>
+          <div class="pub-title"><span class="pub-badge badge-pub">Published</span>Explainable multimodal prediction of treatment-resistance in depression leveraging brain morphometry and NLP</div>
+          <div class="pub-venue">Lee DY, Kim N, ..., <strong>Gan S</strong>, et al. · <em>Psychiatry Research</em>, 2024; 334:115817</div>
         </div>
       </div>
-
       <div class="pub">
-        <div class="pub-year">2025</div>
-        <div class="pub-body">
-          <div class="pub-title">
-            <span class="pub-badge badge-prep">In preparation</span>
-            XGBoost-based hyperuricemia prediction: multicenter OMOP-CDM external validation
-          </div>
-          <div class="pub-venue">Gan S, et al. · Target: Cardiovascular Diabetology</div>
+        <div class="pub-year">2024</div>
+        <div>
+          <div class="pub-title"><span class="pub-badge badge-pub">Published</span>Risk of contrast-induced AKI in CT: A 16-institutional retrospective cohort study</div>
+          <div class="pub-venue">Choi B, Heo S, ..., <strong>Gan S</strong>, et al. · <em>Investigative Radiology</em>, 2024</div>
         </div>
       </div>
-
       <div class="pub">
-        <div class="pub-year">2025</div>
-        <div class="pub-body">
-          <div class="pub-title">
-            <span class="pub-badge badge-prep">In preparation</span>
-            CONCERN EWS feature feasibility in Korean tertiary hospital settings
-          </div>
-          <div class="pub-venue">Gan S, et al. · Ajou University Medical Center</div>
+        <div class="pub-year">2024</div>
+        <div>
+          <div class="pub-title"><span class="pub-badge badge-pub">Published</span>KorMedMCQA: Multi-choice QA benchmark for Korean healthcare professional licensing examinations</div>
+          <div class="pub-venue">Kweon S, Choi B, ..., <strong>Gan S</strong>, et al. · <em>arXiv</em> 2403.01469, 2024</div>
         </div>
       </div>
+    </div>
 
+    <div class="subsection-label">Ongoing / in preparation</div>
+    <div class="pub-list">
+      <div class="pub">
+        <div class="pub-year"></div>
+        <div><div class="pub-title"><span class="pub-badge badge-rev">In revision</span>* Frailty status and outcomes in ACS patients undergoing PCI</div></div>
+      </div>
+      <div class="pub">
+        <div class="pub-year"></div>
+        <div><div class="pub-title"><span class="pub-badge badge-rev">In review</span>* Hyperuricemia risk and association with kidney failure and mortality in newly diagnosed type 2 diabetes: A multicenter machine learning study</div></div>
+      </div>
+      <div class="pub">
+        <div class="pub-year"></div>
+        <div><div class="pub-title"><span class="pub-badge badge-wip">Manuscript</span>* Comparative safety and effectiveness of mirtazapine versus aripiprazole augmentation in SSRI-treated patients: A nationwide population-based cohort study</div></div>
+      </div>
+      <div class="pub">
+        <div class="pub-year"></div>
+        <div><div class="pub-title"><span class="pub-badge badge-wip">Manuscript</span>* Enhancing risk prediction in depression using SDoH extracted from psychiatric notes: A LLM-based multistage framework with external validation</div></div>
+      </div>
+      <div class="pub">
+        <div class="pub-year"></div>
+        <div><div class="pub-title"><span class="pub-badge badge-wip">Manuscript</span>* Exploring the interplay between metabolic syndrome and brain volume in depression: Basis for phenotype-based classification</div></div>
+      </div>
+      <div class="pub">
+        <div class="pub-year"></div>
+        <div><div class="pub-title"><span class="pub-badge badge-diss">Dissertation</span>* Development and application of a multi-agent framework for extracting early signals of clinical deterioration from inpatient nursing narratives</div></div>
+      </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <div class="section-header"><h2>Projects</h2></div>
     <div class="proj-grid">
-
       <div class="proj-card">
         <div class="proj-card-title">Dissertation — LLM agent pipeline for EWS</div>
-        <div class="proj-card-desc">Modular pipeline grounded in Tanner's Clinical Judgment Model for escalation-of-care prediction from Korean inpatient nursing narratives. 364-patient cohort, Ajou University Hospital.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">NLP</span>
-          <span class="proj-tag">LLM agents</span>
-          <span class="proj-tag">Nursing informatics</span>
-        </div>
+        <div class="proj-card-desc">Modular pipeline grounded in Tanner's CJM for escalation-of-care prediction from Korean inpatient nursing narratives. 364-patient cohort, Ajou University Hospital.</div>
+        <div class="proj-tags"><span class="proj-tag">NLP</span><span class="proj-tag">LLM agents</span><span class="proj-tag">Nursing informatics</span></div>
       </div>
-
       <div class="proj-card">
         <div class="proj-card-title">SDoH extraction in psychiatry</div>
-        <div class="proj-card-desc">MedGemma 4B pipeline for extracting 19 SDoH variables from 1,327 Korean psychiatric clinical notes, with downstream OMOP-CDM cohort modeling.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">SDoH</span>
-          <span class="proj-tag">LLM</span>
-          <span class="proj-tag">Psychiatry</span>
-        </div>
+        <div class="proj-card-desc">MedGemma 4B pipeline for extracting 19 SDoH variables from 1,327 Korean psychiatric notes, with downstream OMOP-CDM cohort modeling.</div>
+        <div class="proj-tags"><span class="proj-tag">SDoH</span><span class="proj-tag">LLM</span><span class="proj-tag">Psychiatry</span></div>
       </div>
-
       <div class="proj-card">
-        <div class="proj-card-title">MetS in MDD — neuroimaging analysis</div>
+        <div class="proj-card-title">MetS in MDD — neuroimaging</div>
         <div class="proj-card-desc">GLM, CCA, and PLS analysis linking brain age gap to metabolic syndrome in patients with major depressive disorder.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Neuroimaging</span>
-          <span class="proj-tag">MDD</span>
-          <span class="proj-tag">MetS</span>
-        </div>
+        <div class="proj-tags"><span class="proj-tag">Neuroimaging</span><span class="proj-tag">MDD</span><span class="proj-tag">MetS</span></div>
       </div>
-
+      <div class="proj-card">
+        <div class="proj-card-title">SSRI augmentation pharmacoepidemiology</div>
+        <div class="proj-card-desc">PS-matched nationwide cohort comparing aripiprazole vs. mirtazapine augmentation in SSRI-treated depression, using HIRA/OMOP-CDM.</div>
+        <div class="proj-tags"><span class="proj-tag">Pharmacoepidemiology</span><span class="proj-tag">OMOP-CDM</span><span class="proj-tag">HIRA</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-card-title">CONCERN EWS — Korean feasibility</div>
+        <div class="proj-card-desc">EHR gap analysis and feature feasibility study for translating the CONCERN early warning system to Korean tertiary hospital settings.</div>
+        <div class="proj-tags"><span class="proj-tag">EWS</span><span class="proj-tag">Nursing</span><span class="proj-tag">EHR</span></div>
+      </div>
       <div class="proj-card">
         <div class="proj-card-title">Infectious disease CDM governance (KDCA)</div>
-        <div class="proj-card-desc">OMOP-CDM governance framework design for 질병관리청, coordinating five regional hospitals across Korea.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">CDM</span>
-          <span class="proj-tag">KDCA</span>
-          <span class="proj-tag">Governance</span>
-        </div>
+        <div class="proj-card-desc">OMOP-CDM governance framework for 질병관리청, coordinating five regional hospitals across Korea.</div>
+        <div class="proj-tags"><span class="proj-tag">CDM</span><span class="proj-tag">KDCA</span><span class="proj-tag">Governance</span></div>
       </div>
-
     </div>
   </section>
 
-  <!-- CV -->
   <section id="cv">
     <div class="section-header"><h2>CV</h2></div>
+
+    <div class="subsection-label">Education</div>
     <table class="cv-table">
       <tr>
-        <td class="cv-col-year">2019 –</td>
+        <td class="cv-col-year">Mar 2022 – Present</td>
         <td>
-          <div class="cv-col-title">PhD candidate, Medical Informatics (석박통합과정)</div>
-          <div class="cv-col-sub">Ajou University Hospital · Advisor: Prof. Park Rae-Woong</div>
+          <div class="cv-col-title">Integrated PhD, Biomedical Informatics</div>
+          <div class="cv-col-sub">Ajou University School of Medicine · Advisor: Prof. Rae Woong Park, MD, PhD<br><em>Thesis: Development and Application of a Multi-Agent Framework for Extracting Early Signals of Clinical Deterioration from Inpatient Nursing Narratives</em></div>
         </td>
       </tr>
       <tr>
-        <td class="cv-col-year">Expected 2027</td>
+        <td class="cv-col-year">Mar 2015 – Feb 2020</td>
         <td>
-          <div class="cv-col-title">PhD, Medical Informatics</div>
-          <div class="cv-col-sub">Dissertation submission target: Sep 2026</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="cv-col-year">Skills</td>
-        <td>
-          <div class="cv-col-title">R · Python · SQL · OMOP-CDM · CohortMethod · Node.js</div>
-          <div class="cv-col-sub">Clinical NLP · LLM prompting & evaluation · Pharmacoepidemiology · Propensity score methods</div>
+          <div class="cv-col-title">B.S.N., Nursing</div>
+          <div class="cv-col-sub">Ajou University, Suwon, South Korea</div>
         </td>
       </tr>
     </table>
-    <p style="margin-top: 1.25rem; font-size: 13px; color: var(--muted);">
-      Full CV available upon request.
-    </p>
+
+    <div class="subsection-label">Experience</div>
+    <table class="cv-table">
+      <tr>
+        <td class="cv-col-year">Mar 2022 – Present</td>
+        <td>
+          <div class="cv-col-title">Research Assistant</div>
+          <div class="cv-col-sub">Ajou University School of Medicine, Department of Biomedical Informatics</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="cv-col-year">Oct 2020 – Dec 2021</td>
+        <td>
+          <div class="cv-col-title">Registered Nurse</div>
+          <div class="cv-col-sub">Delivery Room, Ajou University Hospital</div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="subsection-label">Teaching</div>
+    <table class="cv-table">
+      <tr>
+        <td class="cv-col-year">2025</td>
+        <td>
+          <div class="cv-col-title">Invited Lecture — Big Data Applications in Nursing Sciences</div>
+          <div class="cv-col-sub">Ajou University College of Nursing</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="cv-col-year">2024</td>
+        <td>
+          <div class="cv-col-title">Teaching Assistant — R Statistics Course</div>
+          <div class="cv-col-sub">Ajou University College of Nursing · R-based statistics for nursing graduate students</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="cv-col-year">2022</td>
+        <td>
+          <div class="cv-col-title">Biomedical Big Data Analysis Using R</div>
+          <div class="cv-col-sub">Ajou University School of Medicine</div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="subsection-label">Honors &amp; awards</div>
+    <div class="award-list">
+      <div class="award-item">
+        <div class="award-year">2025</div>
+        <div>
+          <div class="award-title">Best Poster Award</div>
+          <div class="award-sub">15th International Nursing Conference &amp; 28th East Asian Forum of Nursing Scholars<br>Association of Frailty Status with Short- and Long-Term Outcomes in MI Patients Undergoing PCI</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2025</div>
+        <div>
+          <div class="award-title">Lightning Talk Selection</div>
+          <div class="award-sub">Global OHDSI Symposium · Exploring the Interplay between Metabolic Syndrome and Brain Volume in Depression</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2024</div>
+        <div>
+          <div class="award-title">Best Oral Presentation Award (×2)</div>
+          <div class="award-sub">The Korean Society of Medical Informatics (KOSMI)<br>HFpEF phenotyping in Asian populations; Treatment-resistant depression prediction using GNN</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2023</div>
+        <div>
+          <div class="award-title">Invited Panel Speaker</div>
+          <div class="award-sub">MEDINFO 2023 Nursing Informatics Conference · Readmission Prediction Using Home Healthcare Notes and OMOP-CDM</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection-label">Selected invited talks</div>
+    <table class="cv-table">
+      <tr>
+        <td class="cv-col-year">2026</td>
+        <td>
+          <div class="cv-col-title">APAC Scientific Conference</div>
+          <div class="cv-col-sub">How OMOP CDM Enables Nursing Research: Standardizing and Operationalizing Nursing Narratives</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="cv-col-year">2025</td>
+        <td>
+          <div class="cv-col-title">Korean Society for Pharmacoepidemiology and Risk Management (KOPERM)</div>
+          <div class="cv-col-sub">Development of RWE Guidelines for MFDS — Electronic Medical Records Section</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="cv-col-year">2024</td>
+        <td>
+          <div class="cv-col-title">KOSMI — Online Tutorial</div>
+          <div class="cv-col-sub">How to Operate Open-Source LLMs in Secure Networks: Selection, Deployment, and Latest Techniques</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="cv-col-year">2024</td>
+        <td>
+          <div class="cv-col-title">Kyunghee University Nursing Science Conference</div>
+          <div class="cv-col-sub">Readmission Prediction Model Using Home Healthcare Records</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="cv-col-year">2024</td>
+        <td>
+          <div class="cv-col-title">Ajou University Hospital Datathon &amp; Crash Course</div>
+          <div class="cv-col-sub">Introduction to OMOP-CDM-Based Global Research</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="cv-col-year">2023</td>
+        <td>
+          <div class="cv-col-title">Ulsan University Hospital</div>
+          <div class="cv-col-sub">Clinical Data Analysis and Research Applications Using OMOP-CDM</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="cv-col-year">2023</td>
+        <td>
+          <div class="cv-col-title">KOSMI — Online Symposium</div>
+          <div class="cv-col-sub">Applications of ChatGPT and Transformer Models in the Medical Domain</div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="subsection-label">Skills &amp; licensure</div>
+    <table class="cv-table">
+      <tr>
+        <td class="cv-col-year">Licensure</td>
+        <td><div class="cv-col-title">Registered Nurse, Republic of Korea (licensed May 2020)</div></td>
+      </tr>
+      <tr>
+        <td class="cv-col-year">Programming</td>
+        <td><div class="cv-col-title">Python · R · SQL · MATLAB · SAS · SPSS</div></td>
+      </tr>
+      <tr>
+        <td class="cv-col-year">Tools</td>
+        <td><div class="cv-col-title">PyTorch · HuggingFace Transformers · Git · Docker · OHDSI HADES · OpenAI API · R Shiny</div></td>
+      </tr>
+    </table>
+
+    <p style="margin-top: 1.25rem; font-size: 13px; color: var(--muted);">Full CV available upon request.</p>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="section-header"><h2>Contact</h2></div>
     <div class="contact-grid">
       <div class="contact-card">
         <div class="contact-label">Email</div>
-        <div class="contact-value">your@email.ac.kr</div>
+        <div class="contact-value">
+          <a href="mailto:sujin0114@ajou.ac.kr">sujin0114@ajou.ac.kr</a><br>
+          <a href="mailto:gansujin@gmail.com">gansujin@gmail.com</a>
+        </div>
       </div>
       <div class="contact-card">
         <div class="contact-label">Institution</div>
-        <div class="contact-value">Ajou University Hospital, Suwon, Korea</div>
+        <div class="contact-value">Ajou University Biomedical Informatics<br>Suwon, South Korea</div>
       </div>
       <div class="contact-card">
         <div class="contact-label">Lab</div>
-        <div class="contact-value">Medical Informatics Lab · Prof. Park Rae-Woong</div>
+        <div class="contact-value">Dept. of Biomedical Informatics<br>Ajou University School of Medicine<br>Prof. Rae Woong Park</div>
       </div>
     </div>
   </section>
 
-  <footer>
-    © 2025 Sujin Gan · Built with HTML/CSS · Hosted on GitHub Pages
-  </footer>
+  <footer>© 2025 Sujin Gan · Hosted on GitHub Pages</footer>
 
 </div>
 </body>
